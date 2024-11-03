@@ -1,0 +1,55 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b0a29; /* Cor de fundo escura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container :hover{
+    background-color: #263147;
+}
+
+/* estilo botões */
+.button {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+     
+}
+
+
+/* Botão VOLTAR */
+.voltar {
+    top: 20px;
+    left: 20px;
+}
+
+/* Botão ATIVIDADE 2 */
+.atividade {
+    top: 20px;
+    right: 20px;
+}
+
