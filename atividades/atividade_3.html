@@ -1,30 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <link rel="stylesheet" href="../styles/atividade_1.css" />
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<body>
+<h1>The Element Object</h1>
+<h2>The appendChild() Method</h2>
 
-        <title>Atividade 3</title>
-    </head>
-    <body>
-        <div class="container">
+<ul id="myList">
+  <li>Café</li>
+  <li>chá</li>
+</ul>
 
-             <!-- Botao para voltar ao index.html -->
-            <a href="../index.html">
-                <button class="button voltar"><i class="fas fa-arrow-left"></i>INÍCIO</button>
-            </a>
-        </div>
-        
-        <div class="respostas">
-<!-- Colocar as respostas dentro desta Div ;) -->
-        </div>
-        <!-- Sem esquecer o link para acessar o arquivo JS -->
-    </body>
+<br>
+<input type="text" id="itemtext" value="" placeholder="Digita ai">
+</br>
+
+<br>
+<input type="radio" id="verm" name="cores" value="red"> 
+<label for="verm">Vermelho</label>
+
+<input type="radio" id="verde" name="cores" value="green">
+<label for="verde">Verde</label>
+
+<input type="radio" id="amarelo" name="cores" value="yellow" checked>
+<label for="amarelo">Amarelo</label>
+</br>
+
+
+<button onclick="myFunction()">Adicionar</button>
+
+<script>
+function myFunction() {
+
+
+let nova = document.getElementById("itemtext").value;
+
+cor = document.querySelector('input[name="cores"]:checked').value;
+
+
+const node = document.createElement("li");
+
+
+const textnode = document.createTextNode(nova);
+
+
+node.appendChild(textnode);
+
+
+document.getElementById("myList").appendChild(node);
+
+node.style.color = cor;
+
+}
+</script>
+
+
+</body>
 </html>
-
+</body>
 </html>
