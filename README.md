@@ -4,9 +4,13 @@ Exercicios de Java Script
 Colaboradores;
 
 Fernando
+<br>
 Gideão Lima
-Isac 
+<br>
+Isac Alves
+<br>
 Kauã
+<br>
 Lucas 
-Pedro Stucki
+<br>
 Wend
