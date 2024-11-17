@@ -75,3 +75,28 @@ body {
     font-size: 1.2em;
     color: white;
 }
+.button {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+     
+}
+/* Botão VOLTAR */
+.voltar {
+    top: 20px;
+    left: 20px;
+}
+
+/* Botão ATIVIDADE 2 */
+.atividade {
+    top: 20px;
+    right: 20px;
+}
