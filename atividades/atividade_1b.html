@@ -8,10 +8,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Atividade 1b</title>
+        <style>
+            body{
+                color: white;
+            }
+        </style>
     </head>
     <body>
+        <h1>Obrigado !!</h1>
 
-        <h1 style="color: white;">Obrigado !!</h1>
+        <p><span id="id_media"></span></p>
+        <p><span id="id_situacao"></span></p>
 
         <div class="container">
             <!-- Botão para voltar ao index.html -->
@@ -22,16 +29,21 @@
                 <a href="../atividades/atividade_2.html">
                     <button class="button atividade">ATIVIDADE 2<i class="fas fa-arrow-right"></i></button>
             </a>
+            
         <script>
             const nota1 = parseFloat(prompt("Digite a nota 1"));
             const nota2 = parseFloat(prompt("Digite a nota 2"));
 
-            const media = (nota1 + nota2) / 2;
+            const calc = (nota1 + nota2) / 2;
 
-            if (media >= 6) {
-                alert(`A media do aluno foi: ${media}\nSituação: aprovado`);
+            if (calc >= 6) {
+
+                const media = document.getElementById('id_media').innerHTML = `A media do aluno é: ${calc}`
+                const situacao = document.getElementById('id_situacao').innerHTML = `A situação do aluno é <p style="color: blue;">Aprovado</p>`
+                
             } else {
-                alert(`A media do aluno foi: ${media}\nSituação: reprovado`);
+               const media = document.getElementById('id_media').innerHTML = `<p style="color: white;">A media do aluno é: ${calc}</p>`
+                const situacao = document.getElementById('id_situacao').innerHTML = `A situação do aluno é <p style="color: red;">Reprovado</p>`
             }
         </script>
     </body>
