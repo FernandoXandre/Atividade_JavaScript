@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     border-radius: 100px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../imagens/fundo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+     border-radius: 100px;
+}
+
+.global { /* div títulos*/
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 80px;
+}
+
+.title { /* estilo título*/
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+.container { /*container transparente*/
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 1.5em;
+    border-radius: 10px;
+    max-width: 250px;
+    width: 90%;
+    top: 0;
+}
+
+.activities {
+    list-style: none;
+}
+
+.activities li {
+    margin: 0.5em 0;
+}
+
+.activities a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 1em;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #081a2e91;
+    border-radius: 2px;
+}
+
+.activities a:hover { /*efeitos botão*/
+    background-color: #263147;
+}
+
+.activities span {
+    font-size: 1.2em;
+    color: white;
+}
+.button {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+  
+}
+
+.voltar {
+    top: 20px;
+    left: 20px;
+}
+
+.atividade {
+    top: 20px;
+    right: 20px;
+}

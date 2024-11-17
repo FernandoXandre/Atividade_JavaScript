@@ -1,4 +1,4 @@
-/* Estilo geral */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,235 +6,170 @@
 }
 
 body {
-    background-color: #ac6fdd; /* Cor de fundo escura */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: url('../imagens/fundo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    color: #ccc;
+    text-align: center;
 }
 
-
-#container {
-    display: flex;
-    /* position: relative; */
-    align-items: center;
-    gap: 3.5rem;
-    width: 100%;
-    height: 100%;
-}
-.container :hover{
-    background-color: #263147;
-}
-/* imagem opcional */
-
-/* estilo da calculadora */
-#calc {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    color: #f8fafc;
-    background-color: #263147;
-    border-radius: 8px;
-
-}
-
-#form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-/* estilo botões */
-.button {
-    background: rgba(0, 0, 0, 0.5);
+.global {
     position: absolute;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-     
+    top: 40px;
+    text-align: center;
+    color: #fff;
 }
 
-#title {
-    font-size: 2.25rem;
-    position: relative;
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
-#title::after {
-    position: absolute;
-    content: '';
-    background-color: #7323b4;
-    width: 8rem;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    border-radius: 3px;
+form {
+    margin-top: 1em;
+}
+
+.input-box {
+    margin-bottom: 1.5em;
 }
 
 .input-box label {
-    font-size: 1.1rem;
-    color: white;
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
 .input-field {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: gray;
-    padding: 0.3;
-    border-radius: 3px;
-    margin-top: 3px;
-}
-
-.input-box label {
-    font-size: 1.1rem;
-    color: whitesmoke;
-    font-weight: 500;
-}
-
-.input-field {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: gray;
-    padding: 0.3rem;
-    border-radius: 3px;
-    margin-top: 3px;
-}
-
-.input-field span,
-.input-field i {
-    color: white;
-    font-size: 1.3 rem;
-    padding: 0.6rem 1 rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .input-field input {
-    background-color: transparent;
+    flex: 1;
+    padding: 0.8em;
     border: none;
-    width: 100%;
-    font-size: 1.3rem;
-    color: whitesmoke;
-    padding: 0 0.5rem;
-}
-
-.input-field input::-webkit-outer-spin-button,
-.input-field input::-webkit-inner-spin-button {
-    appearance: none;
-}
-
-.input-field  input:focus {
     outline: none;
+    font-size: 1em;
 }
-#calc {
-    border: none;
-    font-size: 1.25rem;
+
+.input-field span {
+    padding: 0.8em;
+    background: #f4f4f9;
+    color: #555;
     font-weight: bold;
-    background-color: #19022c;
-    color: rgb(70, 25, 194);
-    padding: 0.5rem 0;
-    border-radius: 3px;
+}
+
+/* Botão de cálculo */
+#calculate {
+    background: rgba(255, 255, 255, 0.9);
+    color: #081a2e;
+    padding: 0.8em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
 }
 
-#result {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    border-top: 1px solid gray;
-    padding: 0.75rem 0;
+#calculate:hover {
+    background-color: #263147;
+    color: #fff;
 }
 
-#bmi {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 2.25rem;
-}
-
-#bmi span:last-child {
-    font-size: 0.875rem;
-    color:aliceblue
-}
-
-#description {
-    width: 15.5rem;
-}
-
-#more_info {
-    border-top: 1px solid gray;
-    padding-top: 1.5rem;
-}
-
-#more_info a {
-    color: #9a2ff1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: color 0.5s;
-}
-
-#more_info a:hover {
-    color: whitesmoke;
+/* Resultados */
+#infos {
+    margin-top: 2em;
+    text-align: center;
 }
 
 .hidden {
     display: none;
 }
 
+#bmi {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5em;
+}
 
+#description {
+    font-size: 1.2em;
+    color: #fff;
+}
 
+#more_info a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+#more_info a:hover {
+    text-decoration: underline;
+}
 
+/* Botões Globais */
+.button {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    padding: 0.8em 1.5em;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Botão VOLTAR */
+/* Botão Voltar */
 .voltar {
     top: 20px;
     left: 20px;
 }
 
-/* Botão ATIVIDADE 2 */
+/* Botão Atividade 3 */
 .atividade {
     top: 20px;
     right: 20px;
 }
 
+.button:hover {
+    background-color: #263147;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 3em 1.5em;
+    }
+
+    .global {
+        top: 20px;
+    }
+
+    #calculate {
+        font-size: 0.9em;
+    }
+
+    .button {
+        font-size: 0.8em;
+        padding: 0.6em 1em;
+    }
+}

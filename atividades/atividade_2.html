@@ -1,103 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../styles/atividade_2.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/atividade_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Botão para voltar ao index.html -->
+        <a href="../index.html" class="button voltar">
+            <i class="fas fa-arrow-left"></i> INÍCIO
+        </a>
 
-        <title>Atividade 2</title>
-    </head>
-    <body>
-            <div class="container">
-                <!-- Botão para voltar ao index.html -->
-                <a href="../index.html">
-                    <button class="button voltar"><i class="fas fa-arrow-left"></i>INÍCIO</button>
-                </a>
+        <!-- Botão para avançar para a atividade 3 -->
+        <a href="../atividades/atividade_3.html" class="button atividade">
+            ATIVIDADE 3 <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
 
-                <!-- Botao para avançar para a atividade 3 -->
-                <a href="../atividades/atividade_3.html">
-                    <button class="button atividade">ATIVIDADE 3<i class="fas fa-arrow-right"></i></button>
-                </a>
-        </div>
-        <!-- Colocar as respostas dentro desta div -->
-        <main id="container">
-            <!-- Imagem opcional-->
-            <section id="calc">
-                <form id="form">
-                    <h1 id="title">
-                        Calculadora de IMC
-                    </h1>
+    <main id="main-container">
+        <section id="calc">
+            <form id="form">
+                <h1 id="title">Calculadora de IMC</h1>
 
-                    <div class="input-box">
-                        <label for="peso">
-                            Peso em Kg
-                        </label>
-                        <div class="input-field">
-                            <input type="number" id="peso" required>
-                            <span>
-                                Kg
-                            </span>
-                        </div>
-                    </div>
-                    <div class="input-box">
-                        <label for="alt">
-                            Altura em m
-                        </label>
-                        <div class="input-field">
-                            <input type="number" id="alt" required>
-                            <span>
-                                m
-                            </span>
-                        </div>
-                    </div>
-                    <button id="calculate">
-                        Calcular
-                    </button>
-                </form>
-
-                <div id="infos" class="hidden">
-                    <div id="result">
-                        <div id="bmi">
-                            <span id="value"></span>
-                            <span>Seu IMC</span>
-                        </div>
-                        <div id="description">
-                            <span></span>
-                        </div>
-                    </div>
-                    <div id="more_info">
-                        <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal">
-                        Mais informações sobre o IMC
-                        </a>
-
+                <div class="input-box">
+                    <label for="peso">Peso em Kg</label>
+                    <div class="input-field">
+                        <input type="number" id="peso" placeholder="Ex: 70" required />
+                        <span>Kg</span>
                     </div>
                 </div>
-            </section>
-        </main>
-        <div class="respostas">
-            <h1>Cálculo do IMC</h1>
-                <h2>(Índice de Massa Corporal)</h2>
-            <p>Peso</p>
-            <p>Altura</p>
-            <p id="peso"></p>
-            
-            <script>
-                var input = require('readline-sync')
-                const peso = Number(input.question('Digite o seu peso (kg):'))
-                const altura = Number(input.question('Digite a sua altura (m):'))
-                console.clear()
-                const IMC = (peso / (altura * altura)).toFixed(2)
-                console.log(`Seu IMC é igual a ${IMC}`)
-                if(IMC >= 18.5 && IMC <=25) {
-                    console.log(`Seu peso está ideal!`)
-                }   else {
-                    console.log(`Seu peso está fora do ideal!`)
-                }
-            </script>
-        </div>
-        <!-- adicionar o link para acessar o arquivo JS -->
-    </body>
-</html>
 
+                <div class="input-box">
+                    <label for="altura">Altura em m</label>
+                    <div class="input-field">
+                        <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" required />
+                        <span>m</span>
+                    </div>
+                </div>
+
+                <button type="button" id="calculate">Calcular</button>
+            </form>
+
+            <div id="infos" class="hidden">
+                <div id="result">
+                    <div id="bmi">
+                        <span id="value"></span>
+                        <span>Seu IMC</span>
+                    </div>
+                    <div id="description">
+                        <span></span>
+                    </div>
+                </div>
+                <div id="more_info">
+                    <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal" target="_blank">
+                        Mais informações sobre o IMC
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script p/ cálculo IMC -->
+    <script>
+        document.getElementById('calculate').addEventListener('click', () => {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                alert('Por favor, insira valores válidos para peso e altura.');
+                return;
+            }
+
+            const imc = (peso / (altura * altura)).toFixed(2);
+            const resultDiv = document.getElementById('infos');
+            const valueSpan = document.getElementById('value');
+            const descriptionSpan = document.getElementById('description span');
+
+            valueSpan.textContent = imc;
+            resultDiv.classList.remove('hidden');
+
+            if (imc < 18.5) {
+                descriptionSpan.textContent = 'Você está abaixo do peso ideal.';
+                descriptionSpan.style.color = 'orange';
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                descriptionSpan.textContent = 'Parabéns! Seu peso está ideal.';
+                descriptionSpan.style.color = 'green';
+            } else {
+                descriptionSpan.textContent = 'Você está acima do peso ideal.';
+                descriptionSpan.style.color = 'red';
+            }
+        });
+    </script>
+</body>
 </html>

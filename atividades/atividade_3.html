@@ -1,65 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/atividade_3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Atividade 3</title>
 </head>
-
 <body>
-<h1>The Element Object</h1>
-<h2>The appendChild() Method</h2>
+    <div class="container">
+        <!-- Botão p/ voltar ao index.html -->
+        <a href="../index.html" class="button voltar">
+            <i class="fas fa-arrow-left"></i> INÍCIO</a>
+    </div>
+    <main id="main-container">
+        <section id="appendChildSection">
+            <h1>The Element Object</h1>
+            <h2>The appendChild() Method</h2>
 
-<ul id="myList">
-  <li>Café</li>
-  <li>chá</li>
-</ul>
+            <!-- Itens -->
+            <ul id="myList" class="styled-list">
+                <li style="color: brown;">Café</li>
+                <li style="color: green;">Chá</li>
+            </ul>
 
-<br>
-<input type="text" id="itemtext" value="" placeholder="Digita ai">
-</br>
+            <!-- Campo de entrada/opções -->
+            <div class="input-box">
+                <label for="itemtext">Adicione um novo item:</label>
+                <div class="input-field">
+                    <input type="text" id="itemtext" placeholder="Digite aqui" />
+                </div>
+            </div>
 
-<br>
-<input type="radio" id="verm" name="cores" value="red"> 
-<label for="verm">Vermelho</label>
+            <!-- cores -->
+            <div class="input-box">
+                <p>Escolha a cor do item:</p>
+                <div class="radio-group">
+                    <input type="radio" id="verm" name="cores" value="red">
+                    <label for="verm">Vermelho</label>
 
-<input type="radio" id="verde" name="cores" value="green">
-<label for="verde">Verde</label>
+                    <input type="radio" id="verde" name="cores" value="green">
+                    <label for="verde">Verde</label>
 
-<input type="radio" id="amarelo" name="cores" value="yellow" checked>
-<label for="amarelo">Amarelo</label>
-</br>
+                    <input type="radio" id="amarelo" name="cores" value="yellow" checked>
+                    <label for="amarelo">Amarelo</label>
+                </div>
+            </div>
 
+            <!-- Botão de ação -->
+            <button id="addItemButton" class="button styled-button">
+                <i class="fas fa-plus"></i> Adicionar
+            </button>
+        </section>
+    </main>
 
-<button onclick="myFunction()">Adicionar</button>
+    <!-- Script -->
+    <script>
+        document.getElementById('addItemButton').addEventListener('click', () => {
+            const novaEntrada = document.getElementById('itemtext').value;
+            const corEscolhida = document.querySelector('input[name="cores"]:checked').value;
 
-<script>
-function myFunction() {
+            if (!novaEntrada.trim()) {
+                alert('Por favor, insira um item.');
+                return;
+            }
 
+            // Criação de um novo elemento <li>
+            const novoItem = document.createElement('li');
+            novoItem.textContent = novaEntrada;
+            novoItem.style.color = corEscolhida;
 
-let nova = document.getElementById("itemtext").value;
-
-cor = document.querySelector('input[name="cores"]:checked').value;
-
-
-const node = document.createElement("li");
-
-
-const textnode = document.createTextNode(nova);
-
-
-node.appendChild(textnode);
-
-
-document.getElementById("myList").appendChild(node);
-
-node.style.color = cor;
-
-}
-</script>
-
-
-</body>
-</html>
+            // Adiciona o novo item à lista
+            document.getElementById('myList').appendChild(novoItem);
+        });
+    </script>
 </body>
 </html>
