@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Média Exer1</title>
+    <style>
+      #situacao {
+        font-weight: bold;
+      }
+    </style>
+  </head>s
+  <body>
+    <h1>Cálculo de Média</h1>
+    <p>
+      Média: <span id="media"></span><br />
+      Situação: <span id="situacao"></span>
+    </p>
+    <script>
+      const nota1 = parseFloat(prompt("Digite a primeira nota:"));
+      const nota2 = parseFloat(prompt("Digite a segunda nota:"));
+
+      const media = (nota1 + nota2) / 2;
+      let situacao = "";
+      let cor = "";
+      if (media >= 6) {
+        situacao = "Aprovado";
+        cor = "blue";
+      } else {
+        situacao = "Reprovado";
+        cor = "red";
+      }
+      document.getElementById("media").innerHTML = media.toFixed(2);
+      const situacaoEl = document.getElementById("situacao");
+      situacaoEl.innerHTML = situacao;
+      situacaoEl.style.color = cor;
+    </script>
+  </body>
+</html>
