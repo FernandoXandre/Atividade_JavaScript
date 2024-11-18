@@ -1,4 +1,3 @@
-/* Estilo geral */
 * {
     margin: 0;
     padding: 0;
@@ -6,60 +5,42 @@
 }
 
 body {
-    background-color: #1b0a29; /* Cor de fundo escura */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
-}
-
-
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-.container :hover{
-    background-color: #263147;
-}
-
-/* estilo botões */
-.button {
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    padding: 10px 20px;
+    background: url('../imagens/fundo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
     color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-     
 }
 
-
-/* Botão VOLTAR */
-.voltar {
-    top: 20px;
-    left: 20px;
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Botão ATIVIDADE 2 */
-.atividade {
-    top: 20px;
-    right: 20px;
+p {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 400px;
 }
 
-.container2 {
-    position: absolute;
-    top: 20px;
-    width: 200px;
-    right: 10pc;
-    
+span {
+    font-weight: bold;
+    font-size: 1.5em;
 }
-.container2 :hover{
-    background-color: #263147;
+
+#situacao {
+    text-transform: uppercase;
+    font-size: 1.2em;
 }
